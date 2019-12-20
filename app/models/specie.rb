@@ -6,5 +6,5 @@ class Specie < ApplicationRecord
 
   # --- Validates ---
 
-  validates :name, limit: 100, presence: true
+  validates :name, length: { maximum: 100 }, presence: true
 end

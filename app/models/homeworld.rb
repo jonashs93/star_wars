@@ -1,4 +1,4 @@
-class Starship < ApplicationRecord
+class Homeworld < ApplicationRecord
 
   # --- Relationships ---
 

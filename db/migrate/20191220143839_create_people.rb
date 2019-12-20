@@ -3,7 +3,7 @@ class CreatePeople < ActiveRecord::Migration[6.0]
     create_table :people do |t|
       t.string :name, limit: 100
       t.decimal :mass
-      t.references :planet, foreign_key: true
+      t.references :homeworld, foreign_key: true
       t.string :birth_year, limit: 10
       t.timestamps
     end
