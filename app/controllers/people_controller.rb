@@ -6,18 +6,18 @@ class PeopleController < ApplicationController
   def collection
     per_page = 10
     results = Person.order(:name).page(params[:page]).per(per_page)
-    json = {
-      "total": results.total_count,
-      "per_page": per_page,
-      "current_page": params[:page],
-      "last_page": (results.total_count / per_page) + 1,
-      "prev_page_url": prev_page_url,
-      "next_page_url": next_page_url,
-      "from": (params[:page].to_i * per_page) - 9,
-      "to": params[:page].to_i * per_page,
-      "data": results
+    response = {
+      'total': results.total_count,
+      'per_page': per_page,
+      'current_page': params[:page],
+      'last_page': (results.total_count / per_page) + 1,
+      'prev_page_url': prev_page_url,
+      'next_page_url': next_page_url,
+      'from': (params[:page].to_i * per_page) - 9,
+      'to': params[:page].to_i * per_page,
+      'data': results
     }
-    render json: json
+    render json: response
   end
 
   def show
