@@ -25,6 +25,7 @@ gem 'pg'
 gem 'httparty'
 gem 'redis'
 gem 'sidekiq'
+gem 'kaminari'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

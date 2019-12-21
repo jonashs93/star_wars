@@ -18,7 +18,6 @@ module StarWars
     # the framework and any gems in your application.
 
     config.add_autoload_paths_to_load_path = true
-
     config.active_job.queue_adapter = :sidekiq
   end
 end

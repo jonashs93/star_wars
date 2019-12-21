@@ -53,9 +53,9 @@ class PersonService
   def add_dependent(dependent_object, dependent_name)
     association = self.person.class.reflect_on_association(dependent_name)
     if association.belongs_to?
-      self.person.update_attribute("#{dependent_name}_id", dependent_object)
+      self.person.update_attribute("#{dependent_name}", dependent_object)
     else
-      PersonDependent.create!(person: self.person, dependent: dependent_object)
+      PersonDependent.first_or_create!(person: self.person, dependent: dependent_object)
     end
   end
 end
