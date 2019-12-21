@@ -46,7 +46,7 @@ class PersonService
 
   # seleciona e normaliza urls de relacionamento para sempre ser um array
   def handle_url_dependent(dependent)
-    [self.attributes[dependent]].flatten
+    [self.attributes[dependent]].flatten.delete_if(&:blank?)
   end
 
   # vincula registro ao personagem, has_many ou belongs_to
