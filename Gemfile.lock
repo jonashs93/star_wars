@@ -1,3 +1,50 @@
+GIT
+  remote: https://github.com/rspec/rspec-core.git
+  revision: 07aa08b97926ce3ccf0798490bd8568219dc2117
+  branch: master
+  specs:
+    rspec-core (3.10.0.pre)
+      rspec-support (= 3.10.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-expectations.git
+  revision: 33e3c614f82be81f81e09f8725b6bc450f7c40d0
+  branch: master
+  specs:
+    rspec-expectations (3.10.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.10.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-mocks.git
+  revision: b934fafd2b0699df8a18f6a590530c08a3a9508e
+  branch: master
+  specs:
+    rspec-mocks (3.10.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.10.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-rails.git
+  revision: a769a4d37a65bb911c6774450e23568b5cf78f08
+  branch: master
+  specs:
+    rspec-rails (4.0.0.pre)
+      actionpack (>= 4.2)
+      activesupport (>= 4.2)
+      railties (>= 4.2)
+      rspec-core (= 3.10.0.pre)
+      rspec-expectations (= 3.10.0.pre)
+      rspec-mocks (= 3.10.0.pre)
+      rspec-support (= 3.10.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-support.git
+  revision: a87275efff996096d29a5bdbf5d7dd9b785107a0
+  branch: master
+  specs:
+    rspec-support (3.10.0.pre)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -80,7 +127,13 @@ GEM
     concurrent-ruby (1.1.5)
     connection_pool (2.2.2)
     crass (1.0.5)
+    diff-lcs (1.3)
     erubi (1.9.0)
+    factory_bot (5.1.1)
+      activesupport (>= 4.2.0)
+    factory_bot_rails (5.1.1)
+      factory_bot (~> 5.1.0)
+      railties (>= 4.2.0)
     ffi (1.11.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -186,6 +239,8 @@ GEM
     selenium-webdriver (3.142.6)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    shoulda-matchers (3.1.2)
+      activesupport (>= 4.0.0)
     sidekiq (4.2.8)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
@@ -235,6 +290,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   chromedriver-helper
+  factory_bot_rails
   httparty
   jbuilder (~> 2.5)
   kaminari
@@ -243,8 +299,14 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 6.0.0.beta3)
   redis
+  rspec-core!
+  rspec-expectations!
+  rspec-mocks!
+  rspec-rails!
+  rspec-support!
   sass-rails (~> 5.0)
   selenium-webdriver
+  shoulda-matchers
   sidekiq
   spring
   spring-watcher-listen (~> 2.0.0)

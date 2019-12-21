@@ -1,8 +1,11 @@
 class Specie < ApplicationRecord
 
-  # --- Relationships ---
+  # --- Associations ---
 
-  has_many :people
+  has_many   :dependents, -> { where(dependent_type: 'Specie') },
+                          foreign_key: :dependent_id, class_name: 'PersonDependent',
+                          dependent: :destroy
+  has_many   :people, through: :dependents
 
   # --- Validates ---
 

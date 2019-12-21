@@ -34,7 +34,7 @@ class PersonService
     dependent_urls.each do |url|
       dependent_attributes = HTTParty.get(url)
       # busca ou cria registro
-      dependent_object = klass_dependent(dependent_name).first_or_create!(name: dependent_attributes['name'])
+      dependent_object = klass_dependent(dependent_name).where(name: dependent_attributes['name']).first_or_create!
       add_dependent(dependent_object, dependent_name)
     end
   end
@@ -55,7 +55,7 @@ class PersonService
     if association.belongs_to?
       self.person.update_attribute("#{dependent_name}", dependent_object)
     else
-      PersonDependent.first_or_create!(person: self.person, dependent: dependent_object)
+      PersonDependent.where(person: self.person, dependent: dependent_object).first_or_create!
     end
   end
 end

@@ -1,6 +1,6 @@
 class Person < ApplicationRecord
 
-  # --- Relationships ---
+  # --- Associations ---
 
   belongs_to :homeworld, optional: true
   has_many   :dependents, class_name: 'PersonDependent', dependent: :destroy

@@ -1,6 +1,6 @@
 class Homeworld < ApplicationRecord
 
-  # --- Relationships ---
+  # --- Associations ---
 
   has_many :people
 
