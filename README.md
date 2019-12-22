@@ -1,25 +1,41 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este projeto importa dados da API https://swapi.co/ e lista os registros utilizando para desenvolvimento do client-side VueJS e Ruby on Rails para server-side.
 
-Things you may want to cover:
+# Star Wars
 
-* Ruby version
+### Dependências
+----
 
-* System dependencies
+- Ruby version 2.5.0+
+- Rails 6.0.0+
+- PostgreSQL
+- Redis 4.0+
 
-* Configuration
+### Instalação
+----
 
-* Database creation
+Instale as gems
 
-* Database initialization
+`bundle install`
 
-* How to run the test suite
+Crie o banco de dados e importa os dados
 
-* Services (job queues, cache servers, search engines, etc.)
+`bundle exec rake db:reset`
 
-* Deployment instructions
+Se precisar apenas importar os dados
 
-* ...
-# star_wars
+`bundle exec rake db:seed`
+
+Instale as dependências do javascript
+
+`yarn install`
+
+Inicie o Sidekiq para executar os processos que o db:seed enfileirou, pois eles os dados estão sendo importados em background
+
+`bundle exec sidekiq`
+
+### Execução (Underline)
+----
+
+`rails s`
