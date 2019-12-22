@@ -12,22 +12,30 @@ class ImportService
     # percorre paginas
     while self.url
       # carrega personagens da pagina atual
-      get_data
+      self.data = get_data
 
       # percorre personagens da pagina atual
       self.data['results'].each do |person_data|
         # realiza importacao em background
-        PersonJob.perform_later(person_data)
+        send_job(person_data)
       end
 
       # seleciona url da proxima pagina
-      self.url = self.data.parsed_response['next']
+      self.url = get_next_url
     end
   end
 
   private
 
   def get_data
-    self.data = HTTParty.get(self.url)
+    HTTParty.get(self.url)
+  end
+
+  def get_next_url
+    self.data.parsed_response['next']
+  end
+
+  def send_job(person_data)
+    PersonJob.perform_later(person_data)
   end
 end

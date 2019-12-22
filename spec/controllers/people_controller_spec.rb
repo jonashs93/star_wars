@@ -8,6 +8,8 @@ RSpec.describe PeopleController do
       get :collection
     end
 
+    after { Person.destroy_all }
+
     it "returns http success" do
       expect(response).to have_http_status(:success)
     end
