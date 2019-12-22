@@ -46,3 +46,11 @@ Inicie o Sidekiq para executar os processos que o db:seed enfileirou, pois os da
 Inicie o servidor
 
 `rails s`
+
+
+### Teste
+------------
+
+Para executar os testes
+
+`bundle exec rspec`
