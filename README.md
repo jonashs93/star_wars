@@ -5,7 +5,7 @@ Este projeto importa dados da API https://swapi.co/ e lista os registros utiliza
 # Star Wars
 
 ### Dependências
-----
+------------
 
 - Ruby version 2.5.0+
 - Rails 6.0.0+
@@ -13,29 +13,36 @@ Este projeto importa dados da API https://swapi.co/ e lista os registros utiliza
 - Redis 4.0+
 
 ### Instalação
-----
+------------
 
 Instale as gems
 
 `bundle install`
 
-Crie o banco de dados e importa os dados
+
+Crie o banco de dados e importe os dados
 
 `bundle exec rake db:reset`
+
 
 Se precisar apenas importar os dados
 
 `bundle exec rake db:seed`
 
+
 Instale as dependências do javascript
 
 `yarn install`
 
-Inicie o Sidekiq para executar os processos que o db:seed enfileirou, pois eles os dados estão sendo importados em background
+
+Inicie o Sidekiq para executar os processos que o db:seed enfileirou, pois os dados estão sendo importados em background
 
 `bundle exec sidekiq`
 
-### Execução (Underline)
-----
+
+### Execução
+------------
+
+Inicie o servidor
 
 `rails s`
