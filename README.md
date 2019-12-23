@@ -47,6 +47,10 @@ Inicie o servidor
 
 `rails s`
 
+A aplicação ficará disponível em
+
+http://localhost:8080
+
 
 ### Teste
 ------------
