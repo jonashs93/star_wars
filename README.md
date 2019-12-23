@@ -49,7 +49,7 @@ Inicie o servidor
 
 A aplicação ficará disponível em
 
-http://localhost:8080
+http://localhost:3000
 
 
 ### Teste
