@@ -50,12 +50,26 @@ RSpec.describe PeopleController do
   end
 
   describe '#greeting_message' do
-    let(:greeting_message) do
-      "Olá! Meu nome é #{subject.name}. Sou um #{subject.species.first&.name}, peso #{subject.mass} kg, " \
-      "nasci em #{subject.homeworld&.name} no ano #{subject.birth_year} e #{controller.send(:starships, subject)}."
-    end
+    context "when language is english" do
+      let(:greeting_message) do
+        "Hello! My name is #{subject.name}."
+      end
 
-    it { expect(controller.send(:greeting_message, subject)).to eq(greeting_message) }
+      it "returns phrase in english" do
+        expect(controller.send(:greeting_message, subject)).to eq(greeting_message)
+      end
+    end
+    
+    context "when language is portuguese" do
+      let(:greeting_message) do
+        "Olá! Meu nome é #{subject.name}. Sou um #{subject.species.first&.name}, peso #{subject.mass} kg, " \
+        "nasci em #{subject.homeworld&.name} no ano #{subject.birth_year} e #{controller.send(:starships, subject)}."
+      end
+
+      it "returns phrase in portuguese" do
+        expect(controller.send(:greeting_message, subject)).to eq(greeting_message)
+      end
+    end    
   end
 
   describe '#starships' do

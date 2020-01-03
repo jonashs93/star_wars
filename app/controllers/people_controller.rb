@@ -27,9 +27,10 @@ class PeopleController < ApplicationController
 
   private
 
-  def greeting_message(person)
-    "Olá! Meu nome é #{person.name}. Sou um #{person.species.first&.name}, peso #{person.mass} kg, " \
-    "nasci em #{person.homeworld&.name} no ano #{person.birth_year} e #{starships(person)}."
+  def greeting_message(person, language="pt-br")
+    I18n.t("hello")
+    # "Olá! Meu nome é #{person.name}. Sou um #{person.species.first&.name}, peso #{person.mass} kg, " \
+    # "nasci em #{person.homeworld&.name} no ano #{person.birth_year} e #{starships(person)}."
   end
 
   def starships(person)
