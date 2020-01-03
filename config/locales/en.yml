@@ -30,4 +30,4 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "Hello! My name is %{name}. I am %{species}, I weigth %{mass} kg, I was born %{homeworld} in %{birth_year} and %{starships}."

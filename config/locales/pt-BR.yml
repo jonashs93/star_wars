@@ -30,4 +30,4 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 pt-BR:
-  hello: "Olá!"
+  hello: "Olá! Meu nome é %{name}. Sou um %{species}, peso %{mass} kg, nasci em %{homeworld} no ano %{birth_year} e %{starships}."

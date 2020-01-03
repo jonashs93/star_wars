@@ -52,14 +52,15 @@ RSpec.describe PeopleController do
   describe '#greeting_message' do
     context "when language is english" do
       let(:greeting_message) do
-        "Hello! My name is #{subject.name}."
+        "Hello! My name is #{subject.name}. I am #{subject.species.first&.name}, I weigth #{subject.mass} kg, " \
+        "I was born #{subject.homeworld&.name} in #{subject.birth_year} and #{controller.send(:starships, subject)}."
       end
 
       it "returns phrase in english" do
-        expect(controller.send(:greeting_message, subject)).to eq(greeting_message)
+        expect(controller.send(:greeting_message, subject, 'en')).to eq(greeting_message)
       end
     end
-    
+
     context "when language is portuguese" do
       let(:greeting_message) do
         "Olá! Meu nome é #{subject.name}. Sou um #{subject.species.first&.name}, peso #{subject.mass} kg, " \
@@ -69,7 +70,7 @@ RSpec.describe PeopleController do
       it "returns phrase in portuguese" do
         expect(controller.send(:greeting_message, subject)).to eq(greeting_message)
       end
-    end    
+    end
   end
 
   describe '#starships' do
